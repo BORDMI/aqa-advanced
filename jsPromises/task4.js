@@ -1,13 +1,13 @@
 class TodoService {
-  async fetchTodo() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+  async fetchTodo(id) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
     return response.json();
   }
 }
 
 class UserService {
-  async fetchUser() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+  async fetchUser(id) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     return response.json();
   }
 }
@@ -15,7 +15,7 @@ class UserService {
 const todoService = new TodoService();
 const userService = new UserService();
 
-const allResults = Promise.all([todoService.fetchTodo(), userService.fetchUser()]);
+const allResults = Promise.all([todoService.fetchTodo(1), userService.fetchUser(1)]);
 
 allResults
   .then((results) => {
