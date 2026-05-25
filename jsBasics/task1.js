@@ -1,4 +1,4 @@
-const str = "Just a string";
+const str = 'Just a string';
 const num = 42;
 const bool = true;
 const nothing = null;
