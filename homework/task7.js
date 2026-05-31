@@ -1,9 +1,9 @@
-const handleEven = () => console.log("number is even");
+const handleEven = () => console.log('number is even');
 
-const handleOdd = () => console.log("number is odd");
+const handleOdd = () => console.log('number is odd');
 
 function handleNum(num, evenCallback, oddCallback) {
-  if (num % 2 === 0) evenCallback(); 
+  if (num % 2 === 0) evenCallback();
   else oddCallback();
 }
 

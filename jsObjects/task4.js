@@ -1,10 +1,10 @@
 const person = {
-  firstName: "Anna",
-  lastName: "Smith",
+  firstName: 'Anna',
+  lastName: 'Smith',
   age: 30,
 };
 
-person.email = "anna.smith@example.com";
+person.email = 'anna.smith@example.com';
 
 delete person.age;
 
