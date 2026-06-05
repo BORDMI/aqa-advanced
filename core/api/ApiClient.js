@@ -17,12 +17,16 @@ export class ApiClient {
 
     this.client.interceptors.response.use(
       (response) => {
-        console.log(`← [RESPONSE] ${response.status} ${response.statusText} ${JSON.stringify(response.data)}`);
+        console.log(
+          `← [RESPONSE] ${response.status} ${response.statusText} ${JSON.stringify(response.data)}`,
+        );
         return response;
       },
       (error) => {
         const status = error.response?.status ?? 'network error';
-        console.error(`← [ERROR] ${status}`);
+        console.error(
+          `← [ERROR] ${status} ${error.message ?? ''} ${JSON.stringify(error.response?.data)}`,
+        );
         return Promise.reject(error);
       },
     );
