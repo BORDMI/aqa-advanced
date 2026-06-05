@@ -60,7 +60,7 @@ describe('Mocking Axios in Jest', () => {
       await expect(
         api.signIn({ email: 'wrong@test.com', password: 'BadPass1!' }),
       ).rejects.toMatchObject({
-        response: { status: 400, data: { message: 'Wrong email or password' } },
+        response: { status: 400, data: { status: 'error', message: 'Wrong email or password' } },
       });
     });
 
@@ -71,7 +71,7 @@ describe('Mocking Axios in Jest', () => {
       jest.spyOn(api.client, 'get').mockRejectedValueOnce(error);
 
       await expect(api.getCars()).rejects.toMatchObject({
-        response: { status: 401, data: { status: 'error' } },
+        response: { status: 401, data: { status: 'error', message: 'Not authenticated' } },
       });
     });
 
@@ -82,7 +82,7 @@ describe('Mocking Axios in Jest', () => {
       jest.spyOn(api.client, 'get').mockRejectedValueOnce(error);
 
       await expect(api.getCarById(999999)).rejects.toMatchObject({
-        response: { status: 404 },
+        response: { status: 404, data: { status: 'error', message: 'Car not found' } },
       });
     });
   });

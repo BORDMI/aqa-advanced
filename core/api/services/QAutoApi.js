@@ -34,15 +34,25 @@ export class QAutoApi extends ApiClient {
     return res;
   }
 
-  logout() { return this.get('/auth/logout'); }
+  logout() {
+    return this.get('/auth/logout');
+  }
 
-  deleteUser() { return this.delete('/users'); }
+  deleteUser() {
+    return this.delete('/users');
+  }
 
-  getCars() { return this.get('/cars'); }
-  
-  addCar(body) { return this.post('/cars', body); }
-  
-  getCarById(id) { return this.get(`/cars/${id}`); }
+  getCars() {
+    return this.get('/cars');
+  }
+
+  addCar(body) {
+    return this.post('/cars', body);
+  }
+
+  getCarById(id) {
+    return this.get(`/cars/${id}`);
+  }
 
   getExpenses(carId, page = 1, headers = {}) {
     return this.get('/expenses', { params: { carId, page }, headers });
