@@ -32,12 +32,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.4.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "jest": "^30.4.2",
+    "jest-html-reporters": "^3.1.7",
     "prettier": "^3.8.3"
   }
 }

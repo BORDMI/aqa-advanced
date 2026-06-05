@@ -22,7 +22,7 @@ export class ApiClient {
       },
       (error) => {
         const status = error.response?.status ?? 'network error';
-        console.error(`← [ERROR] ${status}`);
+        console.error(`← [ERROR] ${status} ${error.message ?? ''} ${JSON.stringify(error.response?.data)}`); 
         return Promise.reject(error);
       },
     );
